@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Guidance Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('backgroun.jpg'); /* Replace with your college background */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .interest-item {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .interest-item:hover {
+      background-color: #4CAF50;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .interest-item.python { background-color: #306998; color: #FFD43B; }
+    .interest-item.webdev { background-color: #4CAF50; color: white; }
+    .interest-item.aiml { background-color: #1F6FEB; color: white; }
+    .interest-item.dsa { background-color: #FF8C00; color: white; }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Select Your Career Interest</h1>
+
+    <div class="interest-item aiml" onclick="window.location.href='resources.html?interest=AIML'">
+      <p>AIML</p>
+    </div>
+
+    <div class="interest-item python" onclick="window.location.href='resources.html?interest=Python'">
+      <p>Python</p>
+    </div>
+
+    <div class="interest-item webdev" onclick="window.location.href='resources.html?interest=Web Development'">
+      <p>Web Development</p>
+    </div>
+
+    <div class="interest-item dsa" onclick="window.location.href='resources.html?interest=DSA with Java'">
+      <p>DSA with Java</p>
+    </div>
+
+    <button class="btn" onclick="window.location.href='resources.html'">View Resources</button>
+  </div>
+
+</body>
+</html>
