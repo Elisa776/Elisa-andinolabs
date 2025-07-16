@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources for Career Interest</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('backgroun.jpg'); /* Replace with your college background */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .resources {
+      margin-top: 20px;
+    }
+
+    .resource-item {
+      background-color: #f4f4f4;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .resource-item:hover {
+      background-color: #d1ffd1;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Resources for <span id="interest-name"></span></h1>
+
+    <div class="resources" id="resources-list"></div>
+
+    <button class="btn" onclick="window.location.href='index.html'">Back to Career Interests</button>
+  </div>
+
+  <script>
+    // Get query parameter "interest"
+    const urlParams = new URLSearchParams(window.location.search);
+    const interest = urlParams.get('interest');
+    
+    // Display the selected interest name
+    document.getElementById('interest-name').textContent = interest;
+
+    // Add resources based on the selected interest
+    const resources = {
+      "AIML": [
+        { name: "YouTube - AI and ML Basics", link: "https://www.youtube.com/watch?v=4KqKUKDrXzU" },
+        { name: "PDF - Introduction to Machine Learning", link: "https://example.com/ai_ml_intro.pdf" }
+      ],
+      "Python": [
+        { name: "YouTube - Python Basics", link: "https://www.youtube.com/watch?v=QXeEoD0pB3E&list=PLsyeobzWxl7poL9JTVyndKe62ieoN-MZ3" },
+        { name: "PDF - Python Programming Guide", link: "https://www.python.org/doc/av/" }
+      ],
+      "Web Development": [
+        { name: "YouTube - Web Development Full Course", link: "https://www.youtube.com/watch?v=tVzUXW6siu0&list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w" },
+        { name: "PDF - Web Development for Beginners", link: "https://example.com/web_dev_intro.pdf" }
+      ],
+      "DSA with Java": [
+        { name: "YouTube - Data Structures in Java", link: "https://www.youtube.com/watch?v=aMaayeDW360" },
+        { name: "PDF - Java DSA Tutorial", link: "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/" }
+      ]
+    };
+
+    // Get the resources for the selected interest
+    const selectedResources = resources[interest];
+
+    // Display resources in the list
+    const resourcesList = document.getElementById('resources-list');
+    selectedResources.forEach(resource => {
+      const resourceItem = document.createElement('div');
+      resourceItem.className = 'resource-item';
+      resourceItem.innerHTML = `<a href="${resource.link}" target="_blank">${resource.name}</a>`;
+      resourcesList.appendChild(resourceItem);
+    });
+  </script>
+
+</body>
+</html>
